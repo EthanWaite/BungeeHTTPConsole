@@ -1,0 +1,5 @@
+# The port that BungeeHTTPConsole should run on.
+port: 8080
+
+# The list of secret API keys that can access /console.
+apikeys:
