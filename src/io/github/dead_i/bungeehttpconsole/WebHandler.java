@@ -34,7 +34,16 @@ public class WebHandler extends AbstractHandler {
                 out.put("error", "Missing parameters. Required parameters: apikey, cmd");
             }else{
                 if (BungeeHTTPConsole.getConfig().getList("apikeys").contains(apikey)) {
-                    out.put("result", plugin.getProxy().getPluginManager().dispatchCommand(plugin.getProxy().getConsole(), cmd));
+                    WebCommandSender sender = new WebCommandSender();
+                    plugin.getProxy().getPluginManager().dispatchCommand(sender, cmd);
+
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        //
+                    }
+
+                    out.put("result", sender.getMessages());
                 }else{
                     out.put("error", "The API key you provided is invalid.");
                 }

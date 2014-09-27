@@ -3,7 +3,7 @@
     <groupId>BungeeHTTPConsole</groupId>
     <artifactId>BungeeHTTPConsole</artifactId>
     <name>BungeeHTTPConsole</name>
-    <version>0.2</version>
+    <version>0.3</version>
     <build>
         <sourceDirectory>src</sourceDirectory>
         <defaultGoal>clean package</defaultGoal>
